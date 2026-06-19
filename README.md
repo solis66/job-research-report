@@ -124,14 +124,18 @@ A: 可以。在输入中明确指定网站即可，如"限定 BOSS 直聘搜索"
 
 **1、PDF排版过程中出现文本没有正确对齐的现象**
 
-![](C:\Users\20931\AppData\Roaming\marktext\images\2026-06-19-17-17-02-image.png)
-
 解决：
 
 - 新增 `style_bullet` —— `TA_LEFT` 对齐、无首行缩进、`leading` 降至 1.5x
 - 将所有分点处（`·` 开头）从 `style_body` 切换为 `style_bullet`
 
-![](C:\Users\20931\AppData\Roaming\marktext\images\2026-06-19-17-17-48-image.png)
+![problem1.png](C:\Users\20931\Desktop\行业岗位调研\job-research-report\data\problem1.png)
+
+![resolution1.png](C:\Users\20931\Desktop\行业岗位调研\job-research-report\data\resolution1.png)
+
+
+
+
 
 ## 技术栈
 
