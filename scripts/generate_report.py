@@ -67,6 +67,9 @@ style_body = ParagraphStyle('Body', fontName=FONT_SONG, fontSize=SZ_BODY,
     spaceBefore=0, spaceAfter=4, alignment=TA_JUSTIFY)
 style_body_ni = ParagraphStyle('BodyNI', fontName=FONT_SONG, fontSize=SZ_BODY,
     leading=SZ_BODY*2.1, spaceBefore=0, spaceAfter=4, alignment=TA_JUSTIFY)
+style_bullet = ParagraphStyle('Bullet', fontName=FONT_SONG, fontSize=SZ_BODY,
+    leading=SZ_BODY*1.5, leftIndent=SZ_BODY*1.5,
+    spaceBefore=0, spaceAfter=3, alignment=TA_LEFT)
 style_cover_t = ParagraphStyle('CT', fontName=FONT_HEI, fontSize=26,
     leading=38, alignment=TA_CENTER, spaceBefore=0, spaceAfter=20)
 style_cover_s = ParagraphStyle('CS', fontName=FONT_SONG, fontSize=SZ_H1,
@@ -169,12 +172,12 @@ def generate(input_path, output_path):
     if duties:
         story.append(Paragraph('具体职责包括：', style_body))
         for i, duty in enumerate(duties, 1):
-            story.append(Paragraph(str(i)+'. '+duty, style_body))
+            story.append(Paragraph(str(i)+'. '+duty, style_bullet))
     reqs = jd.get('requirements', [])
     if reqs:
         story.append(Paragraph('任职要求：', style_body))
         for r in reqs:
-            story.append(Paragraph('\u00b7 '+r, style_body))
+            story.append(Paragraph('\u00b7 '+r, style_bullet))
 
     # section 3 - salary
     sal = d.get('salary', {})
@@ -207,10 +210,10 @@ def generate(input_path, output_path):
     story.append(Paragraph('四、技能要求', style_h1))
     story.append(Paragraph('（一）硬技能', style_h2))
     for item in sk.get('hard_skills', []):
-        story.append(Paragraph('\u00b7 '+item, style_body))
+        story.append(Paragraph('\u00b7 '+item, style_bullet))
     story.append(Paragraph('（二）软技能', style_h2))
     for item in sk.get('soft_skills', []):
-        story.append(Paragraph('\u00b7 '+item, style_body))
+        story.append(Paragraph('\u00b7 '+item, style_bullet))
 
     # references
     refs = d.get('references', [])
