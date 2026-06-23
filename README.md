@@ -41,6 +41,8 @@
    # 克隆或复制 skill 目录到 Codex skills 路径
    cp -r job-research-report ~/.codex/skills/
    ```
+   
+   
 
 2. 重启 Codex，Skill 将自动加载。
 
@@ -107,40 +109,9 @@ TOP_M = 3.7 * cm   # 上边距
 2. 扩展 JSON schema 添加新字段
 3. 在 `generate_report.py` 的 `generate()` 函数中添加渲染逻辑
 
-## 常见问题
-
-**Q: 生成的 PDF 中文显示乱码？**
-A: 确保系统已安装宋体（SimSun）和黑体（SimHei）字体，这些字体在 Windows 上预装。
-
-**Q: 薪资数据不准确？**
-A: 薪资数据来源于实时联网搜索，受市场波动和搜索源影响。报告中会标注调研日期以供参考。
-
-**Q: 可以指定搜索来源吗？**
-A: 可以。在输入中明确指定网站即可，如"限定 BOSS 直聘搜索"。
 
 
 
-## 已修改问题
-
-**1、PDF排版过程中出现文本没有正确对齐的现象**
-
-解决：
-
-- 新增 `style_bullet` —— `TA_LEFT` 对齐、无首行缩进、`leading` 降至 1.5x
-- 将所有分点处（`·` 开头）从 `style_body` 切换为 `style_bullet`
-
-![problem1.png](C:\Users\20931\Desktop\行业岗位调研\job-research-report\data\problem1.png)
-
-![resolution1.png](C:\Users\20931\Desktop\行业岗位调研\job-research-report\data\resolution1.png)
-
-
-
-
-
-## 技术栈
-
-- [ReportLab](https://www.reportlab.com/) — Python PDF 生成库
-- Codex Skill Framework — Skill 运行时环境
 
 ## License
 

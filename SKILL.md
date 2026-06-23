@@ -133,7 +133,8 @@ python scripts/generate_report.py <input.json> <output.pdf>
 
 **文件命名规则：** `{公司名}_{岗位名}_调研报告.pdf`
 
-输出文件保存在用户当前工作目录下新的目录output/{公司名}_{岗位名}_调研报告.pdf。
+输出文件保存在用户当前工作目录下新的目录output/当天日期（格式：xx-xx）/{公司名}_{岗位名}_调研报告.pdf。
+pdf文件保存后，将多余的json文件删除。
 
 ### 第五步：展示结果
 
